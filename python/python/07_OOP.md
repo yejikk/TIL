@@ -60,3 +60,24 @@ isinstance(yeji, Person)
 # yeji와 Person이 같은 type인 class인지 확인.
 ```
 
+* python 출력의 비밀 : repr, str
+
+  ```python
+  class Person:
+      name = '홍길동'
+      
+      def greeting(self):
+          print(f'hello, {self.name}')
+      
+      # str : 사용자들을 위한 것. print()를 써야 호출이 됨
+      def __str__(self):
+          return f'사람 : {self.name}'
+      
+      # repr : idle, jupyter notebook, python => REPL 환경에서
+      def __repr__(self):
+          return f'사람 : {self.name}'
+      
+      # str이 없으면, repr 호출
+      # repr 없으면, str 호출하지 않음
+  ```
+
