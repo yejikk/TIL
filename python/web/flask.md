@@ -27,6 +27,12 @@ def hello():
 $ FLASK_APP=hello.py flask run
 ```
 
+C9에서 서버 실행하기
+
+```
+
+```
+
 크롬으로 `https://localhost:5000` , `https://192.0.0.1:5000` 열어본다!
 
 ``` python
