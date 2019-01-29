@@ -3,6 +3,7 @@
 * #### Flask란?
 
   * URL routing 및 페이지 Rendering을 위한 기본 사항을 제공하는 Web Application용 경량 python Framework를 말한다.
+  * 요청이 들어오면 app.route를 통해 요청이 들어오는 경로를 만들어놓고 함수를 실행시켜서 응답을 처리한다.
 
 * #### @app.route('/')
 
