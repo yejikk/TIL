@@ -38,6 +38,8 @@ exec "$SHELL"
 
 ## 실행
 
+* git부터 해도 상관없음
+
 ```
 pyenv virtualenv 3.6.7 {flask-venv} # {가상환경 이름}
 pyenv local {flask-venv} # {가상환경 이름}
