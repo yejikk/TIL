@@ -23,8 +23,6 @@
 
    지금부터 pwd(현재 디렉토리)는 `~/workspace/django_intro`이다.
 
-   
-
 2. 서버 실행하기
 
    * `settings.py` 설정
@@ -54,13 +52,13 @@
 >
 > T (Template) : 사용자에게 결과물을 보여준다.
 >
-> V (View) : 모델과 템플릿의 동작을 제어한다. (모델의 상태를 변경하거나 값을 가져오고, 템플릿에 값을 전달하기 등)
+> V (View) : 모델과 템플릿의 동작을 제어한다. (모델의 상태를 변경하거나 값을 가져오고, 템플릿에 값을 전달하기 등, CRUD 역할!)
 >
 > **일반적으로 MVC패턴으로 더 많이 사용된다.**
 
 ### 기본 로직
 
-앞으로 우리는 1. 요청 url 설정(`urls.py`) 2. 처리 할 view 설정(`view.py`) 3. 결과 보여줄 template 설정(`templates`/)으로 작성할 것이다.
+앞으로 우리는 **1.** 요청 url 설정(`urls.py`) **2.** 처리 할 view 설정(`view.py`) **3.** 결과 보여줄 template 설정(`templates`/)으로 작성할 것이다.
 
 1. url 설정
 
@@ -88,8 +86,8 @@
 
    * views를 만들어주기 위해서는 app을 추가해야한다.
      * `python manage.py startapp app이름` : bash에 쳐서 만들어주기
-     * **project는 여러가지 app들로 구성**되어 있다. (project안에 묶여있음 db속 table과 비슷)
-       - 이 app들은 M(model)T(templates)V(view)로 구성되어 있다.
+     * **project는 여러가지 app들로 구성**되어 있다. (project안에 묶여있음 db속 table과 비슷한 개념)
+       - 이 `app`들은 M(model)T(templates)V(view)로 구성되어 있다.
      * `settings.py` 에 가서  `INSTALLED_APPS`에  app을 추가해줘야 한다.
        *  `INSTALLED_APPS`에 있는 template을 불러온다.
 
@@ -117,6 +115,8 @@
 > Django에서 활용되는 Template은 DTL(Django Template Language)이다.
 >
 > jinja2와 문법이 유사하다.
+>
+> 결과를 보여줄 template 설정 (`templates`/)
 
 1. 요청 url 설정
 
@@ -176,7 +176,6 @@
    <h1> {{name}}, 안녕!!! </h1>
    ```
 
-   
 
 ## 5. Form data
 
@@ -256,6 +255,10 @@
 ## 6. Django static (static file 관리) 
 
 > 정적 파일(images, css, js)이 서버에 저장이 되어 있을 때, 이를 각각의 템플릿에 불러오는 방법
+>
+> Static file은 Javascript, CSS, Image 파일처럼 웹 서비스에서 사용하려고 미리 준비해 놓은 파일이다.
+>
+> 정적 파일(static file)은 파일 자체가 고정되어 있고, 서비스 중에도 수시로 추가되거나 변경되지 않고 고정되어 있다.
 
 #### 디렉토리 구조
 
@@ -289,7 +292,7 @@
 
 
 
-## 7. URL 설정 분리
+## 7. URL 설정 분리 (app 각자 관리)
 
 > 위와 같이 코드를 짜는 경우에, `django_intro/urls.py`에 모든 url 정보가 담기게 된다.
 >
@@ -326,7 +329,7 @@
 
 
 
-## 8. Template 폴더 설정
+## 8. Template 폴더 설정 (app 각자 관리)
 
 #### 디렉토리 구조
 
