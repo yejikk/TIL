@@ -56,3 +56,14 @@ git config --global user.name _______
 git config --global user.email ________
 ```
 
+
+
+## 4. Django
+
+```text
+pyenv virtualenv django-venv
+pyenv local django-venv
+
+pip install django~=1.11.0
+```
+
