@@ -1,4 +1,6 @@
-# 190211 - 190212 Django
+# 190211 - 190212 Django(V, T)
+
+* ### V(view), T(Template) study
 
 ## 1. 시작하기
 
