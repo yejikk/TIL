@@ -53,8 +53,6 @@
          ...
      ```
 
-     
-
 5. DB에 반영
 
    ```bash
@@ -107,38 +105,38 @@
 
      * 실행하면, `INSTALLED_APPS`에 지정된 내용들이 자동 import 된다.
 
-2.  메소드 정리
+2. 메소드 정리
 
-   1.  CRUD - **C**
+1. CRUD - **C**
 
-      ```python
-      # 첫번째 방식
-      board = Board()
-      board.title = '1번 제목'
-      board.content = '1번 내용'
-      board.save()
-      
-      # 두번째 방식
-      board = Board(title='1번제목', content='1번내용')
-      board.save()
-      
-      # 세번째 방식(save가 없어도 됨.)
-      board = Board.objects.create(title='1번제목', content='1번내용')
-      ```
+   ```python
+   # 첫번째 방식
+     board = Board()
+     board.title = '1번 제목'
+     board.content = '1번 내용'
+     board.save()
+     
+     # 두번째 방식
+     board = Board(title='1번제목', content='1번내용')
+     board.save()
+     
+     # 세번째 방식(save가 없어도 됨.)
+     board = Board.objects.create(title='1번제목', content='1번내용')
+   ```
 
-      * `save()` 
+   * `save()`
 
-        ```python
-        board = Board(title='1번제목', content='1번내용')
-        board.id # return값이 None
-        board.created_at # return값이 None
-        board.save()
-        board.id # return값 1
-        board.created_at # return값이 datetime.datetime(2019, 2, 18, 16, 20)
-        ```
+     ```python
+     board = Board(title='1번제목', content='1번내용')
+     board.id # return값이 None
+     board.created_at # return값이 None
+     board.save()
+     board.id # return값 1
+     board.created_at # return값이 datetime.datetime(2019, 2, 18, 16, 20)
+     ```
 
-        * `save()` 메소드를 호출해야, DB에 저장된다. DB에 저장되면서 `id`와 `created_at`에 값이 부여된다.
-        * `save()` 전에 `full_clean()` 메소드를 통해 현재 board 객체가 validation(검증)에 적합한지를 알아볼 수 있다.
+     * `save()` 메소드를 호출해야, DB에 저장된다. DB에 저장되면서 `id`와 `created_at`에 값이 부여된다.
+     * `save()` 전에 `full_clean()` 메소드를 통해 현재 board 객체가 validation(검증)에 적합한지를 알아볼 수 있다.
 
    2. CRUD - **R**
 
@@ -160,7 +158,7 @@
          ```
 
          * `get()`은 데이터베이스에 일치하는 값이 없으면, 오류가 발생한다.
-         * 또한, 결과가 여러개의 값이면, 오류가 발생한다.
+         * 또한, 결과가 여러개의 값이면 오류가 발생한다.
          * 따라서! `id` 즉, Primary Key에만 사용하기! 
          * 리턴값은 board 오브젝트이다! (`filter()`, `all()`은 모든 **QuerySet**이 리턴된다.)
 
@@ -208,9 +206,12 @@
 
       ```python
       # 특정 단어 기준 탐색
-      Board.objects.filter(title__contains='글') # 제목에 글이 들어간 모든 데이터
-      Board.objects.filter(title__startswith='1') # 제목에 1로 시작하는 모든 데이터
-      Board.objects.filter(title__endswith='글') # 제목에 글로 끝나는 모든 데이터
+      Board.objects.filter(title__contains='글') 
+      # 제목에 글이 들어간 모든 데이터
+      Board.objects.filter(title__startswith='1') 
+      # 제목에 1로 시작하는 모든 데이터
+      Board.objects.filter(title__endswith='글') 
+      # 제목에 글로 끝나는 모든 데이터
       
       # 특정 단어 기준 탐색 활용
       >>> Board.objects.filter(title__endswith='글')[0]
@@ -219,7 +220,6 @@
       <Board: 3: 3번글>
       ```
 
-      
 
 ## admin (id, 비밀번호 설정)
 
