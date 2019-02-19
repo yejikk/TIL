@@ -37,7 +37,7 @@
 4. Migration 파일 생성 (db에 반영할 준비를 하는 작업)
 
    ```bash
-   $ python manage.py makemigratgions
+   $ python manage.py makemigrations
    ```
 
    * DB에 반영하기 전에, 현재 등록된 APP의 `models.py`를 바탕으로 DB 설계도를 작성한다.
