@@ -68,7 +68,7 @@ h1{color:blue; font-size:15px}
 
 : `em`은 배수 단위로 상대 단위이다. 
 
-  요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈를 설정한다.
+  요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈=(16px))에 상대적인 사이즈를 설정한다.
 
   (em의 기준은 상속의 영향으로 바뀔 수 있다.)
 
@@ -80,7 +80,7 @@ h1{color:blue; font-size:15px}
 
 #### 5. Viewport 단위
 
-: 디바이스마다 다른 크기의 화면을 가지고 있기 때문에 상대적인 단위인 viewport 기준     으로 만든 단위이다.
+: 디바이스마다 다른 크기의 화면을 가지고 있기 때문에 상대적인 단위인 viewport 기준으로 만든 단위이다.
 
 ```html
 <p class="vh">5vh</p>
@@ -105,6 +105,89 @@ h1{color:blue; font-size:15px}
 #### 2. RGB : rgb(0, 0, 0) (red, green, blue 기준)
 
 #### 3. RGBA : rgb(0, 0, 0, 0.5)
+
+
+
+## selector(선택자)와 우선순위
+
+* #### selector(선택자)
+
+  * `class` : . 으로 나타냄
+
+    ```html
+    <h2 class="pink">클래스 선택자</h2>
+    ```
+
+    ```css
+    .pink{
+        color: pink;
+    }
+    /* class가 pink인 것을 선택하겠다. class선택자 */
+    ```
+
+  * `id` : #으로 나타냄
+
+    ```html
+    <h3 id="yellow">id 선택자</h3>
+    ```
+
+    ```css
+    #yellow{
+        color: yellowgreen;
+    }
+    /* id 선택자 */
+    ```
+
+  * `tag` : h1~h6, p, a, ...
+
+* #### 우선순위
+
+  * **id** - **class** - **tag** 순으로 우선순위
+
+    ```html
+    <h3 id="yellow" class="pink">id > class</h3>
+    ```
+
+* #### class 순서
+
+  ```html
+  <p class="bold pink blue">COLOR</p>
+  ```
+
+  * 띄어쓰기를 통해서 class를 구분할 수 있다.
+
+  ```css
+  .pink{
+      color: pink;
+  }
+  .blue {
+      color : blue;
+  }
+  ```
+
+  * 결과는 `blue` class가 적용되어서 나온다.
+    * css 파일의 코드상에 `blue` class가 가장 마지막에 있기 때문에 마지막에 있는 `blue` class가 적용되어서 나온다.
+    * code의 순서도 중요하다.
+
+* #### css를 적용시키기 위해서는 마크업을 하고 선택자를 부여한다. span, div 태그는 의미는 없지만 css 적용을 위해서 활용한다.
+
+  * `markup(마크업)` : tag를 사용하는 것
+
+
+
+## seletor(선택자) 심화
+
+* #### 그룹 선택자
+
+  ```css
+  p, h1, h2, h3 {
+      color :gray;
+  }
+  ```
+
+  * 여러개의 seletor로 구성된 그룹선택자도 가능하다.
+
+* `<`와 `띄어쓰기` 중요
 
 
 
