@@ -187,7 +187,59 @@ h1{color:blue; font-size:15px}
 
   * 여러개의 seletor로 구성된 그룹선택자도 가능하다.
 
-* `<`와 `띄어쓰기` 중요
+* #### 자식 셀렉터
+
+  * 자식 선택자는 특정 요소의 **직계 자식**만 선택하는 선택자이다.
+  * 자식 이후의 손자, 후손들은 포함하지 않는다. 
+  * `ol` 이내에 있는 직계 자식 `li`만 darkgreen색으로 바뀐다.
+
+  ```html
+  <ol>
+          <li>ol 자식 li</li>
+  </ol>
+  ```
+
+  ```css
+  ol > li {
+      color : darkgreen;
+  }
+  ```
+
+* `ol`중 id="choco" 안에 있는 `li`만 변한다.
+
+  ```html
+  <ol id="choco">
+          <li>허쉬</li>
+          <li>드림카카오</li>
+          <li>쿠앤크</li>
+  </ol>
+  ```
+
+  ```css
+  ol#choco > li {
+      color : chocolate
+  }
+  ```
+
+* #### 후손 셀렉터
+
+  * 문서 주소에서 특정 요소의 자손을 선택하는 선택자이다. 후손 셀렉터는 자식, 손자, 그리고 그 이후에 후손을 모두 포함한다.
+  * 그러므로 `ul` 이내에 있는 `li` 요소는 모두 lime 색으로 바뀐다.
+
+  ```html
+  <ul>
+          <div>
+              <li>ul 자식 li</li>
+              <li>ul 자식2 li</li>
+          </div>
+  </ul>
+  ```
+
+  ```css
+  ul li {
+      color: lime
+  }
+  ```
 
 
 
@@ -223,14 +275,14 @@ h1{color:blue; font-size:15px}
 
 #### 1. block
 
-* 항상 새로운 라인에서 시작한다.
+* 항상 **새로운 라인에서 시작**한다.
 * 화면 크기 전체의 가로폭을 차지한다. (width: 100%)
 * block 레벨 요소 내에 inline 레벨 요소를 포함할 수 있다.
 * block 레벨 요소의 예 : `div` , `h1~h6`, `p`, `ol`, `ul`, `li`, `hr`, `table`, `form`
 
 #### 2. inline
 
-* 새로운 라인에서 시작하지 않으며 문장의 중간에 들어갈 수 있다.
+* **새로운 라인에서 시작하지 않으며** 문장의 중간에 들어갈 수 있다.
 * content의 너비만큼 가로폭을 차지한다.
 * `width`, `height`, `margin-top`, `margin-bottom` 프로퍼티를 지정할 수 없다.
 * 상, 하 여백은 `line-heigh`로 지정한다.
@@ -239,7 +291,7 @@ h1{color:blue; font-size:15px}
 #### 3. inline-block
 
 * block과 inline 레벨 요소의 특징을 모두 갖는다.
-* inline 레벨 요소처럼 한 줄에 표시되면서 block에서의 width, height, margin(top, bottom)속성을 모두 지정할 수 있다.
+* **inline 레벨 요소처럼 한 줄에 표시**되면서 block에서의 width, height, margin(top, bottom)속성을 모두 지정할 수 있다.
 
 #### 4. None
 
@@ -268,11 +320,11 @@ h1{color:blue; font-size:15px}
 
 #### 2. relative (상대위치)
 
-* 기본 위치(static으로 지정되었을 때의 위치)를 기준으로 좌표 프로퍼티(top, bottom, left, right)를 사용하여 위치를 이동
+* **기본 위치(static으로 지정되었을 때의 위치)**를 기준으로 좌표 프로퍼티(top, bottom, left, right)를 사용하여 위치를 이동
 
 #### 3. absolute (절대위치)
 
-* 부모 요소 또는 가장 가까이 있는 조상 요소(static 제외)를 기준으로 좌표 프로퍼티만큼 이동한다.
+* **부모 요소 또는 가장 가까이 있는 조상 요소(static 제외)를 기준**으로 좌표 프로퍼티만큼 이동한다.
 * 즉, `relative`, `absolute`, `fixed` 프로퍼티가 선언되어 있는 부모 또는 조상 요소를 기준으로 위치가 결정된다.
 
 #### 4. fixed (고정위치)

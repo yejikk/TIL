@@ -1,4 +1,4 @@
-# 190212 Django template
+# 190212 Django Template Language(DTL)
 
 ```python
 # views.py
