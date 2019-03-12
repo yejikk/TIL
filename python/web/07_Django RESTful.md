@@ -156,3 +156,6 @@ ex) GET : /users/{userid}/devices
 
   * `form`에 action을 쓰지 않는 이유는 POST 방식으로 요청을 하기 때문에 그대로 응답이 오기 때문에 action을 쓰지 않아도 저장이 되기 때문이다.
 
+
+
+* render, redirects는 HTTPRESPONSE에 해당된다.
