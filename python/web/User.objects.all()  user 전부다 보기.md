@@ -89,3 +89,19 @@ auth_login(request, login_form.get_user()) # 사용자 관련 정보만 뽑아�
 
 
 login_form = AuthenticationForm(request, request.POST) : http 관련 정보도 얻어와야하기 때문에 request도 넣어줘야함
+
+
+
+@login_required # 로그인이 안되어있으면 login 창부터 띄워준다.  
+
+: login이 반드시 필요하다.
+
+
+
+settings.py, LOGIN_URL : '/accounts/login/' 이 default로 되어있음.
+
+
+
+* 1:N 
+  * 한명(user)은 여러개의 board(게시글)을 쓸 수 있다.
+
