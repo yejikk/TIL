@@ -109,3 +109,37 @@ settings.py, LOGIN_URL : '/accounts/login/' 이 default로 되어있음.
 
 * hash: 어떠한 자료를 키로 가져있으면 연결을 하겠다
   * dictionary  형태임
+
+
+
+* decorator에서 가져온다.
+  * from django.views.decorators.http import require_http_methods, require_POST
+
+
+
+* form 정리
+
+  * 회원가입 - 회원변경(ModelForm), 로그인 - 비밀번호 변경(Form)
+  * ModelForm은 request.POST 넣고 instance를 넣음
+    * 기본적으로 수정을 할 때에는 instance를 넣음
+  * Form은 ModelForm을 상속받는 것이 아니라서 앞에 request가 반드시 필요하다.
+    * ModelForm과 다르다.
+
+  | Django user form   | 용도          | 상속      |
+  | ------------------ | ------------- | --------- |
+  | UserCreationForm   | 회원가입      | ModelForm |
+  | AuthenticationForm | 로그인        | Form      |
+  | UserChangeForm     | 회원변경      | ModelForm |
+  | PasswordChangeForm | 비밀번호 변경 | Form      |
+
+
+user.email|makehash
+
+
+
+프로필 페이지(유저 detail)
+
+- gravatar 이미지
+- 이메일
+- username / 이름
+- 그 사람이 쓴 글
