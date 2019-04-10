@@ -210,6 +210,10 @@
 
 
 
+* `settings.py` `LOGIN_URL : '/accounts/login/'` 이 default로 되어있음.
+
+
+
 
 
 

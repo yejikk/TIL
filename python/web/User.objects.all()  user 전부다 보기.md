@@ -105,3 +105,7 @@ settings.py, LOGIN_URL : '/accounts/login/' 이 default로 되어있음.
 * 1:N 
   * 한명(user)은 여러개의 board(게시글)을 쓸 수 있다.
 
+
+
+* hash: 어떠한 자료를 키로 가져있으면 연결을 하겠다
+  * dictionary  형태임
