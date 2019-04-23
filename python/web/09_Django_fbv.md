@@ -74,21 +74,12 @@
      * `request.POST` 는 Dictionary로서 POST된 데이터를 가지고 있다.
 
    * `is_valid()` 메서드 
+
      * POST data에 잘못된 data의 유무를 판단하여 올바른 data라면 **save()** 메서드를 호출하여 DB에 저장한다.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+## 추가 내용
 
 static : 내가 사용하는 정적파일(img, js, css)
 

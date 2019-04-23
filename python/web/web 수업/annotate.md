@@ -40,10 +40,6 @@ movie_id가 1(`.get(pk=)`)이면서, score 테이블의 score 컬럼의(`score__
 
 
 
-
-
-
-
 ## 2. index에서 보여주기
 
 * 모든 영화에 각각 평균 값

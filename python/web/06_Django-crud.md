@@ -256,3 +256,4 @@ $ python manage.py createsuperuser
   * return 값: `<QuerySet [<Board: 1: 안녕>, <Board: 2: 2번글>, <Board: 3: 3번글>]>`
   * return값을 `list`처럼 조작한다. 
     * 나중에 이 것을 이용하여 for문을 실행하거나, append를 하는 등 이용을 함
+
