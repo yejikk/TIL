@@ -10,7 +10,7 @@
 
 * **x** : 예측을 하기 위한 기본적인 자료,  training data 또는 learning data 또는 feature
 * **y** : 예측하려는 값
-* **regression** : 0~100 사이의 값을 예측하는 것
+* **regression** : -무한대 ~ +무한대 사이의 값을 예측하는 것
 * **training** : 데이터로 학습을 시키는 것
 
 
