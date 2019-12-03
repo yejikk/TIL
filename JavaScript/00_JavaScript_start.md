@@ -1,2 +1,0 @@
-# 00_Javascript start
-
