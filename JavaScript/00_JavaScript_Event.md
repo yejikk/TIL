@@ -17,3 +17,9 @@
 4. `resize`
    * 브라우저의 창 크기를 조절할 때 사용한다.
 
+5. `load`
+   * image, javascript file, css file과 같은 외부 자원을 포함하여 페이지를 완전히 불러왔을 때 발생하는 event
+
+6. `scroll`
+   * 문서를 스크롤하는 동안 발생하는 event
+   * scrollLeft와 scrollTop을 통해 얼마나 스크롤한지 알 수 있다.
