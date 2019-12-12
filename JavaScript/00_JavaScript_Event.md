@@ -23,3 +23,9 @@
 6. `scroll`
    * 문서를 스크롤하는 동안 발생하는 event
    * scrollLeft와 scrollTop을 통해 얼마나 스크롤한지 알 수 있다.
+
+7. `oncopy`
+   * `control` + `c`를 눌렀을때(복사) 발생하는 event
+
+8. `onpaste`
+   * `control` + `v`를 눌렀을때(붙여넣기) 발생하는 event
