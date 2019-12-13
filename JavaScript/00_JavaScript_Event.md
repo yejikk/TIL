@@ -29,3 +29,7 @@
 
 8. `onpaste`
    * `control` + `v`를 눌렀을때(붙여넣기) 발생하는 event
+
+9. `onclick`
+   * 왼쪽 마우스가 개체 위를 클릭하였을 때 발생하는 event
+
