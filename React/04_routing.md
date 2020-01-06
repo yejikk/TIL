@@ -81,7 +81,7 @@ export default App;
 
    * path에 `:`를 사용하여 동적 라우팅을 할 수 있다.
 
-     ```javascript
+     ```jsx
      <Route path="/profile/:id" component={Profile} />
      ```
 
@@ -93,7 +93,7 @@ export default App;
 
    * 전달받은 정보는 `{}`표현식을 사용하여 나타낼 수 있다.
 
-     ```javascript
+     ```jsx
      export default function Profile(props) {
        const id = props.match.params.id;
        console.log(id, typeof id);
@@ -112,7 +112,7 @@ export default App;
 
    * path는 동일하게 작성한다.
 
-     ```javascript
+     ```jsx
      <Route path="/about" component={About} />
      ```
 
@@ -122,7 +122,7 @@ export default App;
      npm install query-string
      ```
 
-     ```javascript
+     ```jsx
      const { name } = queryString.parse(props.location.search);
      ```
 
@@ -175,7 +175,7 @@ export default App;
   * `activeClassName`, `activeStyle` 처럼 active 상태에 대한 스타일 지정이 가능하다.
   * Route 의 path 처럼 동작하기 때문에 `exact `가 있다.
 
-  ```javascript
+  ```jsx
   import React from 'react';
   import { NavLink } from 'react-router-dom';
   
