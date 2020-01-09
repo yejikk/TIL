@@ -113,6 +113,7 @@
 > Props와 State 모두 변경이 일어나면, render가 다시 발생한다.
 
 * **Props**
+  * 부모 컴포넌트가 자식과 상호작용할 수 있는 유일한 수단이다.
   * Component 외부에서 컴포넌트에게 주는 데이터
 * **State**
   * Component 내부에서 변경할 수 있는 데이터
@@ -120,3 +121,43 @@
   * Props와 State를 바탕으로 Component를 그리고, 변경이 일어날 경우 Component를 다시 그린다.
   * **Render 함수는** Component를 그리는 방법을 기술하는 함수이다.
 
+
+
+## 6. Ref
+
+* **Ref**는 render 메서드에서 생성된 DOM 노드나 React Element에 접근하는 방법을 제공한다.
+  * Component의 메소드에서 Component의 태그에 직접 접근하고 싶을 때 사용한다.
+* 사용해야할 때
+  1. 포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때
+  2. 애니메이션을 직접적으로 실행시킬 때
+
+
+
+## 7. 함수형 컴포넌트 vs 클래스 기반 컴포넌트
+
+1. **함수형 컴포넌트**
+
+   * 순수 자바스크립트 함수를 이용하여 컴포넌트를 정의한 것을 말한다.
+   * **함수형 컴포넌트**는 `rendering`된 값들을 고정시킨다.
+   * `state`, `setState`, `lifeCycle 함수`, `ref callback` => 사용불가
+
+   ```jsx
+   function functionComponent() {
+     return <p>function Component</p>;
+   }
+   ```
+
+2. **클래스 기반 컴포넌트**
+
+   * `React.Component` 를 상속받은 클래스를 이용하여 컴포넌트를 정의한 것이다.
+   * `state`, `lifeCycle`, `ref` => 사용가능
+
+   ```jsx
+   class classComponent extends React.Component {
+     render() {
+       return <p>class Component</p>;
+     }
+   }
+   ```
+
+   
