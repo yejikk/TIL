@@ -1,8 +1,10 @@
-# ISNULL
+# IFNULL / IF
 
 > 값이 없음을 의미하는 NULL
 >
 > NULL을 처리하는 방식 알아보기
+>
+> IF 사용하는 방식 알아보기
 
 
 
@@ -31,4 +33,13 @@
    SELECT ANIMAL_TYPE, IFNULL(NAME,'No name') AS NAME, SEX_UPON_INTAKE FROM ANIMAL_INS ORDER BY ANIMAL_ID;
    ```
 
-   
+4. **IF**
+
+   * 조건을 처리하는 IF문
+   * 컬럼을 지정할 때, IF를 사용하여 조건을 나타내고 참, 거짓값을 출력할 수 있다.
+
+   ```sql
+   SELECT IF(조건, 참, 거짓) FROM 테이블;
+   ```
+
+   * 특정 문자열이 있는지 확인할 때는 `'%단어%'`를 사용한다.
