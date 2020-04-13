@@ -30,6 +30,8 @@ scopeTest() // 'Global Scope'
 1. **함수 스코프**
 
    * 변수가 `함수 내부`에 선언되었다면 **함수 스코프**에 정의된다.
+   * `var`는 함수 스코프
+     * 지역성을 함수 내에서만 갖는다.
 
    ```javascript
    function scopeTest() {
@@ -46,7 +48,9 @@ scopeTest() // 'Global Scope'
 2. **블록 스코프**
 
    * 변수가 `{} 내부`에 선언되었다면 **블록 스코프**에 정의된다.
-
+* `let`과 `const`는 블록 스코스
+     * 지역성을 `{}` 안에서만 갖는다.
+   
    ```javascript
    {
      const blockScope = 'Block Scope'
