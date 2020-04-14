@@ -1,4 +1,4 @@
-# 02_React_Start
+# 02_React Start
 
 > React Concept, React 라이브러리, JSX, React Component 만드는 법, 
 >
@@ -6,7 +6,7 @@
 
 
 
-## 1. React Concept
+## React Concept
 
 * View 라이브러리
 * Component Based Development
@@ -16,12 +16,33 @@
 
 
 
-## 2. React 라이브러리
+## React 장점
 
-> React의 핵심 모듈 
->
-> 1. react 
-> 2. react-dom 
+1. Virtual DOM(Document Object Model)
+   * DOM이란 Document를 구성하는 하나하나의 요소를 DOM이라고 말한다.
+   * 실제 DOM이 아닌 Virtual DOM에 먼저 변경 작업을 해준 후, 변경된 부분만 찾아 실제 DOM에 변경해준다. 
+   * Virtual DOM을 사용하면 기존 DOM을 변경하는 것보다 연산하는 양을 줄일 수 있다.
+2. Only View, NO MVC
+   * 모든 것을 View로 보고, 데이터가 한방향으로 흐를 수 있도록 한다.
+   * 단반향 데이터 흐름을 하기 위해 `redux`를 사용한다.
+3. Reusable Components
+   * `Library`
+     * Library는 최소한의 기능만을 제공한다.
+     * 리액트는 컴포넌트 기반의 Library이다. Library이기 때문에 속도가 매우 빠르다.
+     * UI 렌더링을 위한 UI 라이브러리이다.
+   * `Framework`
+     * 방대하게 필요한 모든 것들을 전부다 제공하는 것들이 Framework이다.
+4. Hot reloading
+   * 수정을 했을 때, 새로고침하지 않고 저장을 한다면 수정된 부분을 바로 확인할 수 있다.
+5. Server Side Rendering
+   * Server Side Rendering을 지원하기 때문에 검색 엔진 최적화를 할 수 있다.
+   * Backend와 함께 기능을 연동해서 Backend단에서 Page Rendering을 할 수 있다.
+
+
+
+## React 라이브러리
+
+> React의 핵심 모듈 - react, react-dom 
 >
 > React Frontend는 Component를 정의하고, 실제 DOM에 Component를 그려준다.
 
@@ -35,15 +56,10 @@
 
 
 
-## 3. JSX
+## JSX
 
-> JSX는 자바스크립트 문법 확장이다.
+> JSX는 자바스크립트 문법 확장이다. 별도의 html 파일을 만들지 않고 독립적으로 재사용 가능한 모두를 만들기 위해 JSX문법을 도입하였다.
 >
-> JSX는 React 요소를 만든다.
->
-> - React Element를 만드는 방법이다.
->
-> Babel은 JSX를 `React.createElement()` 호출로 컴파일한다.
 
 * **JSX 문법**
 
@@ -60,21 +76,57 @@
   * `if`문을 사용할 수 없다.
 
     * 삼항연산자 또는 &&로 대체가 가능하다.
-
-  * `style`을 통해 인라인 스타일링이 가능하다.
-
-  * class 대신 `className`을 사용하여 class를 적용할 수 있다.
-
-  * 자식요소가 있으면 닫는 Tag가 꼭 필요하고, 그렇지 않은 경우 열면서 닫아야 한다.
-
+  * `num > 0 ? true : false;`
+  
+* `style`을 통해 인라인 스타일링이 가능하다.
+  
+* class 대신 `className`을 사용하여 class를 적용할 수 있다.
+  
+* 자식요소가 있으면 닫는 Tag가 꼭 필요하고, 그렇지 않은 경우 열면서 닫아야 한다.
+  
     ```html
     <div></div>
     <br />
     ```
+    
+  * html 안에서 자바스크립트 문법을 사용하고 싶다면 `{}` 중괄호 사이에 넣고 사용하면 된다.
+  
+    ```jsx
+    const data = [
+      {
+        title: "Node",
+        value: 0,
+      },
+      {
+        title: "React",
+        value: 1,
+      },
+    ];
+    
+    function App() {
+      return (
+        <div className="App">
+          <header className="App-header">
+            {data.map((item) => (
+              <>
+                <p>
+                  {item.title} - {item.value}
+                </p>
+              </>
+            ))}
+          </header>
+        </div>
+      );
+    }
+    
+    export default App;
+    ```
+  
+* Custom하는 모든 속성들을 `props`로 받아서 사용할 수 있다.
 
 
 
-## 4. React Component
+## React Component
 
 > Hooks 는 리액트 v16.8 에 새로 도입된 기능으로서, Hook를 이용하여 Class를 작성할 필요 없이 상태 값과 여러 React의 기능을 사용할 수 있도록 한다.
 >
@@ -108,7 +160,7 @@
 
 
 
-## 5. Props / State
+## Props / State
 
 > Props와 State 모두 변경이 일어나면, render가 다시 발생한다.
 
@@ -123,7 +175,7 @@
 
 
 
-## 6. Ref
+## Ref
 
 * **Ref**는 render 메서드에서 생성된 DOM 노드나 React Element에 접근하는 방법을 제공한다.
   * Component의 메소드에서 Component의 태그에 직접 접근하고 싶을 때 사용한다.
@@ -133,7 +185,7 @@
 
 
 
-## 7. 함수형 컴포넌트 vs 클래스 기반 컴포넌트
+## 함수형 컴포넌트 vs 클래스 기반 컴포넌트
 
 1. **함수형 컴포넌트**
 
